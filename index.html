@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car Rentals Web App</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+    }
+
+    header {
+      background-color: #1e1e2f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    nav a:hover {
+      background-color: #555;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    input, button {
+      padding: 10px;
+      width: 100%;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #1e90ff;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #006ad1;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>DriveNow Rentals</h1>
+    <p>Affordable & Reliable Car Rental Service</p>
+  </header>
+
+  <nav>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#products">Cars</a>
+    <a href="#login">Login</a>
+    <a href="#create">Create Account</a>
+  </nav>
+
+  <section id="dashboard">
+    <h2>Dashboard</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Total Cars</h3>
+        <p>24 Available</p>
+      </div>
+      <div class="card">
+        <h3>Active Rentals</h3>
+        <p>8 Currently Rented</p>
+      </div>
+      <div class="card">
+        <h3>Total Users</h3>
+        <p>145 Registered</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <h2>Available Cars</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Toyota Corolla</h3>
+        <p>Price: $40/day</p>
+      </div>
+      <div class="card">
+        <h3>Honda CR-V</h3>
+        <p>Price: $55/day</p>
+      </div>
+      <div class="card">
+        <h3>BMW X5</h3>
+        <p>Price: $90/day</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="login">
+    <h2>Login</h2>
+    <form onsubmit="return loginUser(event)">
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" id="loginEmail" required>
+      </div>
+      <div class="form-group">
+        <label>Password:</label>
+        <input type="password" id="loginPassword" required>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <section id="create">
+    <h2>Create New Account</h2>
+    <form onsubmit="return createAccount(event)">
+      <div class="form-group">
+        <label>Name:</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label>Password:</label>
+        <input type="password" id="password" required>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 DriveNow Rentals. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function loginUser(event) {
+      event.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+      alert(`Welcome back!\nEmail: ${email}`);
+      // Implement real login logic here
+      return false;
+    }
+
+    function createAccount(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      alert(`Account created for ${name} (${email})`);
+      // Implement real registration logic here
+      return false;
+    }
+  </script>
+
+</body>
+</html>
